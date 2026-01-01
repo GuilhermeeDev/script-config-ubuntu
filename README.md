@@ -7,4 +7,3 @@ Esse script cobre as seguintes configurações abaixo:
 - Instalação de pacotes basicos para uso do linux.
 - Instalação de pacotes para desenvolvedores.
 - Configuração de usuario git.
-- Configuração de Dual Boot com Windows.
