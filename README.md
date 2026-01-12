@@ -6,4 +6,8 @@ Esse script cobre as seguintes configurações abaixo:
 - Adição de repositórios Oficiais e Não-Oficiais.
 - Instalação de pacotes basicos para uso do linux.
 - Instalação de pacotes para desenvolvedores.
-- Configuração de usuario git.
+
+### Futuro
+- Configuração de proxychain
+- Instalação e configuração de ASDF + "Php, Java, Python3, Rust, Ruby, JavaScript, Crystal, Bun, Golang"
+- Configuração de GRUB  
