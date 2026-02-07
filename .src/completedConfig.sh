@@ -36,7 +36,6 @@ packages=(
     "gawk"
     "silversearcher-ag"
     "coreutils"
-    "dirmngr" 
     "gpg"
     "gawk"
     "plocate"

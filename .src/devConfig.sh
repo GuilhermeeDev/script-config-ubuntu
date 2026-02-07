@@ -10,8 +10,6 @@ packages=(
     "linux-headers-generic"
     "software-properties-common"
     "git-lfs"
-    "make"
-    "cmake"
     "default-jdk"
     "ack-grep"
     "fontconfig"
