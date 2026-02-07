@@ -18,7 +18,7 @@ packages=(
     "btop"
     "wget"
     "vlc"
-    "git"
+    "libreoffice"
 )
 
 add_repositories | tee -a $LOGFILE
