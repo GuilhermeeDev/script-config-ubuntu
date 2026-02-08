@@ -1,6 +1,5 @@
 #!/bin/bash
 sudo chmod +x menu.sh
-chmod +x .src/*.sh
 sudo apt install -y curl jq gpg
 clear
 mkdir $HOME/config-ubuntu-based/logs
