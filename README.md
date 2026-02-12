@@ -23,9 +23,8 @@ Clone este repositório:
 cd ~
 git clone https://github.com/GuilhermeeDev/script-config-Ubuntu.git
 ```
-Rode o arquivo de `setup.sh`:
+Rode o `install.sh`:
 ```
-cd script-config-Ubuntu
-chmod +x ./setup.sh
-./setup.sh
+chmod +x ./install.sh
+./install.sh
 ```
