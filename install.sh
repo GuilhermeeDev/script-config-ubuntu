@@ -3,8 +3,8 @@ set -euo pipefail
 
 sudo apt install -y curl jq gpg
 
-LOGFILE="$HOME/script-config-Ubuntu/logs/[Configuracao-Completa]-[$(date +%d-%m-%Y)-$(date +%H:%M)].log"
-mkdir -p "$HOME/script-config-Ubuntu/logs"
+LOGFILE="$HOME/script-config-ubuntu/logs/[Configuracao-Completa]-[$(date +%d-%m-%Y)-$(date +%H:%M)].log"
+mkdir -p "$HOME/script-config-ubuntu/logs"
 touch "$LOGFILE"
 
 sudo add-apt-repository main -y
