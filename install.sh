@@ -129,6 +129,11 @@ sudo apt install apt-transport-https && sudo apt update && sudo apt install code
 # Instalando o Claude code AI
 curl -fsSL https://claude.ai/install.sh | bash | tee -a $LOGFILE
 
+# Instalando Grub-Customizer
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt install -y grub-efi grub2-common grub-customizer
+sudo grub-install
+
 clear
 echo "Para concluir as configurações o sistema sera reiniciado em 5 seg!"
 sleep 5
