@@ -1,9 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo apt install -y curl jq gpg
-
-LOGFILE="$HOME/script-config-ubuntu/logs/[Configuracao-Completa]-[$(date +%d-%m-%Y)-$(date +%H:%M)].log"
+LOGFILE="$HOME/script-config-ubuntu/logs/[LOG-INSTALACAO]-[$(date +%d-%m-%Y)-$(date +%H:%M)].log"
 mkdir -p "$HOME/script-config-ubuntu/logs"
 touch "$LOGFILE"
 
@@ -27,6 +25,8 @@ packages=(
    "net-tools"
    "fastfetch"
    "fzf"
+   "curl"
+   "jq"
    "rar"
    "unrar"
    "zip"
@@ -73,7 +73,8 @@ export ASDF_DIR="$ASDF_DIR"
 . "$ASDF_DIR/asdf.sh"
 . "$ASDF_DIR/completions/asdf.bash"
 
-# # Instalando Plugins do ASDF - Java, NodeJS, Ruby, Python, PHP, Elixir, Golang, Rust, Crystal, Scala, Julia, Perl
+# # Instalando Plugins do ASDF
+
 # # Dependencias para NodeJS
 sudo apt install -y python3 g++-12 gcc-12 python3-pip 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -82,7 +83,7 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 sudo apt install -y autoconf m4 libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 
-# Nao possui dependencias extras
+# Não possuem dependencias extras
 asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir
 asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
 asdf plugin add java https://github.com/halcyon/asdf-java.git
@@ -133,6 +134,12 @@ curl -fsSL https://claude.ai/install.sh | bash | tee -a $LOGFILE
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt install -y grub-efi grub2-common grub-customizer
 sudo grub-install
+
+# Instalando Spotify
+curl -sS https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo apt update && sudo apt install spotify-client -y
 
 clear
 echo "Para concluir as configurações o sistema sera reiniciado em 5 seg!"
