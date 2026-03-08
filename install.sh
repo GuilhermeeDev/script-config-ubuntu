@@ -59,13 +59,15 @@ sudo apt update && sudo apt upgrade -y
 sudo ubuntu-drivers install | tee -a $LOGFILE
 sudo apt install -y "${packages[@]}" | tee -a $LOGFILE
 
-# # 2 - CRIAÇÃO DE PASTAS DE AMBIENTE E CUSTOMIZAÇÃO
 mkdir -p "$HOME/Apps"
 mkdir -p "$HOME/Customização"
+
+# Dotfiles de customização de terminal .bash
 git clone https://github.com/daniruiz/dotfiles.git "$HOME/Customização"
 
 ASDF_DIR = "$HOME/.asdf"
 
+# Instalando ASDFv15
 git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR" --branch v0.15.0
 echo . "$HOME/.asdf/asdf.sh" | tee -a ~/.bashrc
 echo . "$HOME/.asdf/completions/asdf.bash" | tee -a ~/.bashrc
@@ -73,17 +75,17 @@ export ASDF_DIR="$ASDF_DIR"
 . "$ASDF_DIR/asdf.sh"
 . "$ASDF_DIR/completions/asdf.bash"
 
-# # Instalando Plugins do ASDF
+# Instalando Plugins para ASDF
 
-# # Dependencias para NodeJS
+# dependências para NodeJS
 sudo apt install -y python3 g++-12 gcc-12 python3-pip 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-# Dependencias para Erlang
+# dependências para Erlang
 sudo apt install -y autoconf m4 libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 
-# Não possuem dependencias extras
+# Não possuem dependências extras
 asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir
 asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
 asdf plugin add java https://github.com/halcyon/asdf-java.git
