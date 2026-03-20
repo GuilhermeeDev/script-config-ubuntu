@@ -143,6 +143,14 @@ echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/so
 
 sudo apt update && sudo apt install spotify-client -y
 
+# Instalando Homebrew - Gerenciador de pacotes alternativo
+mkdir "$HOME/.homebrew" && \
+git clone https://github.com/Homebrew/brew $HOME/.homebrew
+
+eval "$($HOME/.homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
+
 clear
 echo "Para concluir as configurações o sistema sera reiniciado em 5 seg!"
 sleep 5
