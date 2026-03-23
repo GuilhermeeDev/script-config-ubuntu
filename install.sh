@@ -17,47 +17,11 @@ sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 # Adiciona o pacote Obs-Studio
 # sudo add-apt-repository ppa:obsproject/obs-studio -y
 
-packages=(
-   "build-essential"
-   "linux-headers-generic"
-   "software-properties-common"
-   "mesa-vulkan-drivers"
-   "net-tools"
-   "fastfetch"
-   "fzf"
-   "curl"
-   "jq"
-   "rar"
-   "unrar"
-   "zip"
-   "unzip"
-   "htop"
-   "btop"
-   "wget"
-   "ffmpeg"
-   "vlc"
-   "gimp"
-   "git-lfs"
-   "make"
-   "cmake"
-   "default-jdk"
-   "ack-grep"
-   "fontconfig"
-   "imagemagick"
-   "vim"
-   "vim-gtk3"
-   "dirmngr"
-   "gawk"
-   "silversearcher-ag"
-   "coreutils"
-   "gpg"
-   "plocate"
-   "gnome-tweaks"
-)
-
 sudo apt update && sudo apt upgrade -y
 sudo ubuntu-drivers install | tee -a $LOGFILE
-sudo apt install -y "${packages[@]}" | tee -a $LOGFILE
+sudo apt install -y build-essential linux-headers-generic software-properties-common mesa-vulkan-drivers net-tools fastfetch fzf curl jq \
+rar unrar zip unzip htop btop wget ffmpeg vlc gimp git-lfs make cmake default-jdk ack-grep fontconfig imagemagick vim vim-gtk3 dirmngr \
+gawk silversearcher-ag coreutils gpg plocate gnome-tweaks | tee -a $LOGFILE
 
 mkdir -p "$HOME/Apps"
 mkdir -p "$HOME/Customização"
