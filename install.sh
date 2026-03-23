@@ -65,37 +65,6 @@ mkdir -p "$HOME/Customização"
 # Dotfiles de customização de terminal .bash
 git clone https://github.com/daniruiz/dotfiles.git "$HOME/Customização"
 
-ASDF_DIR = "$HOME/.asdf"
-
-# Instalando ASDFv15
-git clone https://github.com/asdf-vm/asdf.git "$ASDF_DIR" --branch v0.15.0
-echo . "$HOME/.asdf/asdf.sh" | tee -a ~/.bashrc
-echo . "$HOME/.asdf/completions/asdf.bash" | tee -a ~/.bashrc
-export ASDF_DIR="$ASDF_DIR"
-. "$ASDF_DIR/asdf.sh"
-. "$ASDF_DIR/completions/asdf.bash"
-
-# Instalando Plugins para ASDF
-
-# dependências para NodeJS
-sudo apt install -y python3 g++-12 gcc-12 python3-pip 
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-
-# dependências para Erlang
-sudo apt install -y autoconf m4 libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-
-# Não possuem dependências extras
-asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir
-asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
-asdf plugin add java https://github.com/halcyon/asdf-java.git
-asdf plugin add rust https://github.com/asdf-community/asdf-rust.git
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf plugin add crystal https://github.com/asdf-community/asdf-crystal.git
-asdf plugin add php https://github.com/asdf-community/asdf-php.git
-asdf plugin add python https://github.com/asdf-community/asdf-python.git
-asdf plugin add bun
-
 # Instalando o Docker
 sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 sudo apt update
