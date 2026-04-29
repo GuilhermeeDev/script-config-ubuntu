@@ -10,6 +10,7 @@ sudo add-apt-repository universe -y
 sudo add-apt-repository multiverse -y
 sudo add-apt-repository restricted -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 
 # Adiciona o pacote Office
 # sudo add-apt-repository ppa:libreoffice/ppa -y
@@ -24,9 +25,9 @@ rar unrar zip unzip htop btop wget ffmpeg vlc gimp git-lfs make cmake default-jd
 gawk silversearcher-ag coreutils gpg plocate gnome-tweaks | tee -a $LOGFILE
 
 mkdir -p "$HOME/Apps"
-mkdir -p "$HOME/Customização"
+mkdir -p "$HOME/Customizacao"
 
-# Dotfiles de customização de terminal .bash
+# Dotfiles de customização de terminal (by Daniruiz)
 git clone https://github.com/daniruiz/dotfiles.git "$HOME/Customização"
 
 # Instalando o Docker
@@ -66,7 +67,6 @@ sudo apt install apt-transport-https && sudo apt update && sudo apt install code
 curl -fsSL https://claude.ai/install.sh | bash | tee -a $LOGFILE
 
 # Instalando Grub-Customizer
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt install -y grub-efi grub2-common grub-customizer
 sudo grub-install
 
@@ -76,9 +76,8 @@ echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/so
 
 sudo apt update && sudo apt install spotify-client -y
 
-# Instalando Homebrew - Gerenciador de pacotes alternativo
-mkdir "$HOME/.homebrew" && \
-git clone https://github.com/Homebrew/brew $HOME/.homebrew
+# Instalando Homebrew
+mkdir -p "$HOME/.homebrew" && git clone https://github.com/Homebrew/brew $HOME/.homebrew
 
 eval "$($HOME/.homebrew/bin/brew shellenv)"
 brew update --force --quiet

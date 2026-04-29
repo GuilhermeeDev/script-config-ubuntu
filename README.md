@@ -11,20 +11,21 @@ Esse é meu script atual para o ano de 2026 para distros ubuntu & Based's como `
 
 ---
 ### Funcionalidades
-- Instalação de utilitarios básicos linux `fastfetch` , `htop/btop` , `vlc` , `gimp` , `fzf` , [entre outros..](Docs/DOCS.md)
+- Instalação de utilitarios básicos linux `fastfetch` , `htop/btop` , `vlc` , `gimp` , `fzf` , entre outros..
 - Instalação de ferramentas de desenvolvedor `Docker` , `PostgreSQL + PGadmin4` , `VsCode`
-- Adição de repositórios Oficiais e Não-Oficiais. [Conferir](Docs/DOCS.md)
+- Adição de repositórios Oficiais e Não-Oficiais.
 - Instalação do Grub-Customizer
 - Instalação de gerenciador de pacotes alternativo `Homebrew`
 
 ---
 
 ### ⚙️ Como rodar
-Clone este repositório:
+clone este repositório:
 ```
-cd ~ && git clone https://github.com/GuilhermeeDev/script-config-ubuntu.git
+git clone https://github.com/GuilhermeeDev/script-config-ubuntu.git ~/
 ```
-Rode o `install.sh`:
+
+em seguida:
 ```
 ./install.sh
 ```
